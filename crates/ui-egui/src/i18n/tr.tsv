@@ -202,7 +202,7 @@
 	Lab Color	Laboratuvar Rengi
 	Multichannel	Çok kanallı
 	8 Bits/Channel	8 Bit/Kanal
-	8 bit	8 bit
+	8 bit	8 bitlik
 	Integer	Tamsayı
 	16 Bits/Channel	16 Bit/Kanal
 	16 bit	16 bit
@@ -3782,3 +3782,8 @@ cameraData	Lens	Lens
 @plural	{n} step|{n} steps	{n} adım
 @plural	{warning} (+{n} more brush preset warning)|{warning} (+{n} more brush preset warnings)	{warning} (+{n} fırça ön ayarı uyarısı daha)
 @plural	{what} with {n} warning|{what} with {n} warnings	{what}, {n} uyarı ile
+	About Chromatic	Chromatic Hakkında
+	Chromatic Project	Chromatic Web Sitesi
+	Chromatic on GitHub	GitHub'da Chromatic
+	Chromatic project	Chromatic Web Sitesi
+	Chromatic — a modern image editor built with Rust.	Chromatic — Rust'ta yazılmış açık kaynaklı, yerel bir resim düzenleyici.
