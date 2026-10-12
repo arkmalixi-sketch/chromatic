@@ -39,8 +39,9 @@ mod tests {
         crate::PhotocraftApp::setup_context(&ctx, crate::theme::ThemeKind::ALL[0]);
         let mut app = crate::PhotocraftApp::new(photocraft_engine::Session::new(), crate::Services::default());
         app.custom_titlebar = true;
-        let output = ctx.run_ui(egui::RawInput::default(), |ui| crate::panels::title_bar(&mut app, ui));
-        assert!(output.shapes.len() > 0);
+        let mut output = ctx.run_ui(egui::RawInput::default(), |ui| crate::panels::title_bar(&mut app, ui));
+        assert!(!output.shapes.is_empty());
+        output.textures_delta.clear();
         assert!(mark_rect(&ctx).is_some());
     }
 }
