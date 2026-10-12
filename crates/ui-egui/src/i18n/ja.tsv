@@ -3661,3 +3661,8 @@ curves	Smooth	スムーズ
 	Remove after each stroke	ストロークごとに削除
 	Apply the removal ({key})	削除を適用 ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	削除するストローク: {n}（Enter で適用、Esc で取り消し）
+	About Chromatic	Chromatic について
+	Chromatic Project	Chromatic の Web サイト
+	Chromatic on GitHub	GitHub 上の Chromatic
+	Chromatic project	Chromatic の Web サイト
+	Chromatic — a modern image editor built with Rust.	Chromatic — Rust で書かれた、オープンソースのネイティブ画像エディター。
