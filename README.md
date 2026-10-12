@@ -8,6 +8,7 @@
 </p>
 
 <h1 align="center">Chromatic</h1>
+<p align="center"><strong>Make every tone count.</strong></p>
 
 <p align="center">
   <b>An open-source, Rust-powered image editor for photography and creative work.</b><br>
