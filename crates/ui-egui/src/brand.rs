@@ -1,6 +1,6 @@
 //! Chromatic's minimal monochrome aperture mark, drawn natively in egui.
 //! The vector drawing scales cleanly without loading a legacy PhotoCraft icon.
-use egui::{Color32, Context, Id, Rect, Stroke, Ui, pos2, vec2};
+use egui::{Color32, Id, Rect, Stroke, Ui, pos2, vec2};
 
 fn rect_id() -> Id {
     Id::new("chromatic-brand-mark-rect")
@@ -33,6 +33,7 @@ pub fn mark_rect(ctx: &Context) -> Option<Rect> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use egui::Context;
     #[test]
     fn title_bar_paints_the_chromatic_mark() {
         let ctx = Context::default();
