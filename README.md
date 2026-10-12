@@ -1,11 +1,4 @@
-<p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
-</p>
+<p align="center"><img src="assets/chromatic/chromatic-mark.svg" alt="Chromatic monogram" width="104"></p>
 
 <h1 align="center">Chromatic</h1>
 <p align="center"><strong>Make every tone count.</strong></p>
