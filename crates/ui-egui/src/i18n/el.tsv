@@ -3749,3 +3749,8 @@ curves	Smooth	Εξομάλυνση
 	Remove after each stroke	Αφαίρεση μετά από κάθε πινελιά
 	Apply the removal ({key})	Εφαρμογή της αφαίρεσης ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	Πινελιές προς αφαίρεση: {n} (Enter εφαρμόζει, Esc ακυρώνει)
+	About Chromatic	Πληροφορίες για το Chromatic
+	Chromatic Project	Ιστότοπος Chromatic
+	Chromatic on GitHub	Chromatic στο GitHub
+	Chromatic project	Ιστότοπος Chromatic
+	Chromatic — a modern image editor built with Rust.	Chromatic — εγγενής εφαρμογή επεξεργασίας εικόνας ανοικτού κώδικα, γραμμένη σε Rust.
