@@ -33,7 +33,7 @@ jobs:
           mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
           cp target/aarch64-apple-darwin/release/photocraft "$APP/Contents/MacOS/PhotoCraft"
           cp assets/app-icon/photocraft.icns "$APP/Contents/Resources/PhotoCraft.icns"
-          VERSION=$(awk '/^\\[workspace.package\\]/{p=1;next} /^\\[/{p=0} p && $1 == "version" {gsub(/"/,"",$3); print $3; exit}' Cargo.toml)
+          VERSION=$(python3 -c 'import tomllib; print(tomllib.load(open("Cargo.toml", "rb"))["workspace"]["package"]["version"])')
           SHORT_VERSION="${VERSION%%-*}"
           sed -e "s/@VERSION@/$VERSION/g" \
               -e "s/@SHORT_VERSION@/$SHORT_VERSION/g" \
