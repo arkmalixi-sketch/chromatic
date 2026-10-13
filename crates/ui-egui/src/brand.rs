@@ -26,7 +26,7 @@ pub fn paint_mark(ui: &Ui, r: Rect) {
 }
 
 #[cfg(test)]
-pub fn mark_rect(ctx: &Context) -> Option<Rect> {
+pub fn mark_rect(ctx: &egui::Context) -> Option<Rect> {
     ctx.data(|d| d.get_temp(rect_id()))
 }
 
