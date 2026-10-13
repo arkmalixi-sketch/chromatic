@@ -3841,3 +3841,8 @@ layerLabel	No Color	Sem cor
 	Remove after each stroke	Remover após cada traço
 	Apply the removal ({key})	Aplicar a remoção ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	Traços a remover: {n} (Enter aplica, Esc cancela)
+	About Chromatic	Sobre o Chromatic
+	Chromatic Project	Site do Chromatic
+	Chromatic on GitHub	Chromatic no GitHub
+	Chromatic project	Site do Chromatic
+	Chromatic — a modern image editor built with Rust.	Chromatic — um editor de imagens nativo e de código aberto escrito em Rust.

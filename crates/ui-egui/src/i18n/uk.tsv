@@ -3749,3 +3749,8 @@ curves	Smooth	Згладити
 	Remove after each stroke	Видаляти після кожного штриха
 	Apply the removal ({key})	Застосувати видалення ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	Штрихів для видалення: {n} (Enter застосовує, Esc скасовує)
+	About Chromatic	Про Chromatic
+	Chromatic Project	Вебсайт Chromatic
+	Chromatic on GitHub	Chromatic на GitHub
+	Chromatic project	Вебсайт Chromatic
+	Chromatic — a modern image editor built with Rust.	Chromatic — нативний редактор зображень із відкритим кодом, написаний на Rust.

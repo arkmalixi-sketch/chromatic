@@ -3970,3 +3970,9 @@ cameraRaw	Yellow	Sárga
 	Transform On Drop	Átalakítás elengedéskor
 	Vanishing Point is not active	Az Enyészpont nem aktív
 	Vanishing Point: click four corners to create a plane	Enyészpont: sík létrehozásához kattintson a négy sarokra
+	About Chromatic	A Chromatic névjegye
+	Chromatic Project	Chromatic-weboldal
+	Chromatic on GitHub	Chromatic a GitHubon
+	Chromatic project	Chromatic-weboldal
+	Chromatic — a modern image editor built with Rust.	Chromatic – nyílt forráskódú, natív képszerkesztő Rust nyelven.
+	Enable animations	Animációk engedélyezése

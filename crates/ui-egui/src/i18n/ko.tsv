@@ -3221,3 +3221,8 @@ curves	Smooth	매끄럽게
 	Remove after each stroke	획마다 제거
 	Apply the removal ({key})	제거 적용 ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	제거할 획: {n} (Enter 적용, Esc 취소)
+	About Chromatic	Chromatic 정보
+	Chromatic Project	Chromatic 웹사이트
+	Chromatic on GitHub	GitHub의 Chromatic
+	Chromatic project	Chromatic 웹사이트
+	Chromatic — a modern image editor built with Rust.	Chromatic — Rust로 작성된 오픈 소스 네이티브 이미지 편집기.

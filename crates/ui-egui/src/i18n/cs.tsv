@@ -3665,3 +3665,8 @@ navigator	Zoom	Zvětšení
 	Remove after each stroke	Odstranit po každém tahu
 	Apply the removal ({key})	Použít odstranění ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	Tahy k odstranění: {n} (Enter použije, Esc zruší)
+	About Chromatic	O aplikaci Chromatic
+	Chromatic Project	Web Chromatic
+	Chromatic on GitHub	Chromatic na GitHubu
+	Chromatic project	Web Chromatic
+	Chromatic — a modern image editor built with Rust.	Chromatic — nativní editor obrázků s otevřeným zdrojovým kódem napsaný v jazyce Rust.

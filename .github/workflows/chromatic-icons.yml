@@ -1,0 +1,47 @@
+name: Generate Chromatic icons
+
+on:
+  push:
+    branches: [chromatic-rebrand]
+    paths:
+      - assets/chromatic/chromatic-mark.svg
+      - scripts/generate_chromatic_icons.py
+      - .github/workflows/chromatic-icons.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chromatic-rebrand
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image conversion tools
+        run: python -m pip install "Pillow==11.3.0" "CairoSVG==2.8.2"
+      - name: Generate macOS, Windows and Linux icons
+        run: python scripts/generate_chromatic_icons.py
+      - name: Check generated image containers
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          for name in ("photocraft.ico", "photocraft.icns", "photocraft-1024.png"):
+              path = "assets/app-icon/" + name
+              with Image.open(path) as img:
+                  img.load()
+                  print(path, img.format, img.size)
+          PY
+      - name: Commit generated assets to rebrand branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/app-icon/
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(icon): generate Chromatic native icon set"
+            git push origin HEAD:chromatic-rebrand
+          fi

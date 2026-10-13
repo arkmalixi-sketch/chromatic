@@ -1,0 +1,73 @@
+name: Chromatic macOS test build
+
+on:
+  push:
+    branches: [chromatic-rebrand]
+    paths:
+      - '.github/workflows/chromatic-macos-test.yml'
+      - 'apps/**'
+      - 'crates/**'
+      - 'assets/app-icon/**'
+      - 'packaging/macos/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macos-apple-silicon:
+    name: macOS Apple Silicon test application
+    runs-on: macos-15
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: chromatic-macos-arm64
+      - name: Build Chromatic executable
+        run: cargo build --release --locked -p photocraft --features heif --target aarch64-apple-darwin
+      - name: Assemble Chromatic.app
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP="dist/Chromatic.app"
+          mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
+          cp target/aarch64-apple-darwin/release/photocraft "$APP/Contents/MacOS/PhotoCraft"
+          cp assets/app-icon/photocraft.icns "$APP/Contents/Resources/PhotoCraft.icns"
+          VERSION=$(python3 -c 'import tomllib; print(tomllib.load(open("Cargo.toml", "rb"))["workspace"]["package"]["version"])')
+          SHORT_VERSION="${VERSION%%-*}"
+          sed -e "s/@VERSION@/$VERSION/g" \
+              -e "s/@SHORT_VERSION@/$SHORT_VERSION/g" \
+              -e "s/@BUILD_SHA@/$GITHUB_SHA/g" \
+              -e 's|<string>PhotoCraft</string>|<string>Chromatic</string>|g' \
+              packaging/macos/Info.plist.in > "$APP/Contents/Info.plist"
+          # The executable and icon file names are compatibility identifiers;
+          # restore these fields after changing user-facing display names.
+          python3 - <<'PY'
+          import plistlib
+          p='dist/Chromatic.app/Contents/Info.plist'
+          with open(p,'rb') as f: data=plistlib.load(f)
+          data['CFBundleDisplayName']='Chromatic'
+          data['CFBundleName']='Chromatic'
+          data['CFBundleExecutable']='PhotoCraft'
+          data['CFBundleIconFile']='PhotoCraft'
+          data['UTExportedTypeDeclarations'][0]['UTTypeIconFile']='PhotoCraft'
+          with open(p,'wb') as f: plistlib.dump(data,f)
+          PY
+          plutil -lint "$APP/Contents/Info.plist"
+          printf 'APPL????' > "$APP/Contents/PkgInfo"
+          codesign --force --deep --sign - "$APP"
+          codesign --verify --deep --strict --verbose=2 "$APP"
+          ditto -c -k --keepParent "$APP" dist/Chromatic-macos-apple-silicon-test.zip
+      - name: Upload unsigned-release test application
+        uses: actions/upload-artifact@v4
+        with:
+          name: Chromatic-macOS-Apple-Silicon-test
+          path: dist/Chromatic-macos-apple-silicon-test.zip
+          if-no-files-found: error
+          retention-days: 14

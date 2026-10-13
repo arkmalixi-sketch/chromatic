@@ -3535,3 +3535,8 @@ curves	Smooth	Làm mượt
 	Remove after each stroke	Xóa sau mỗi nét vẽ
 	Apply the removal ({key})	Áp dụng việc xóa ({key})
 	Strokes to remove: {n} (Enter applies, Esc cancels)	Nét vẽ cần xóa: {n} (Enter áp dụng, Esc hủy)
+	About Chromatic	Giới thiệu Chromatic
+	Chromatic Project	Trang web Chromatic
+	Chromatic on GitHub	Chromatic trên GitHub
+	Chromatic project	Trang web Chromatic
+	Chromatic — a modern image editor built with Rust.	Chromatic — trình chỉnh sửa ảnh gốc mã nguồn mở viết bằng Rust.

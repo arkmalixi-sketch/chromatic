@@ -1,16 +1,10 @@
-<p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
-</p>
+<p align="center"><img src="assets/chromatic/chromatic-mark.svg" alt="Chromatic monogram" width="104"></p>
 
-<h1 align="center">PhotoCraft</h1>
+<h1 align="center">Chromatic</h1>
+<p align="center"><strong>Make every tone count.</strong></p>
 
 <p align="center">
-  <b>Image editing; an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust.</b><br>
+  <b>An open-source, Rust-powered image editor for photography and creative work.</b><br>
   Layers, masks, adjustment layers, layer styles, type, vectors, brushes and real PSD files,<br>
   in a native app written entirely in Rust. Open source, offline, and yours.
 </p>
@@ -42,6 +36,8 @@
 </p>
 
 > [!NOTE]
+> **Project origin:** Chromatic is derived from the open-source PhotoCraft project by the ArtCraft community. Original licenses, copyright notices, and attribution are retained.
+>
 > **ArtCraft is a community of artists from all walks of life.** Digital, generative, music,
 > games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://discord.gg/artcraft).**
 
