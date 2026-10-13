@@ -4,7 +4,13 @@ on:
   push:
     branches: [chromatic-rebrand]
     paths:
-      - .github/workflows/chromatic-macos-test.yml
+      - '.github/workflows/chromatic-macos-test.yml'
+      - 'apps/**'
+      - 'crates/**'
+      - 'assets/app-icon/**'
+      - 'packaging/macos/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
   workflow_dispatch:
 
 permissions:
